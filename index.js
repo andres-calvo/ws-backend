@@ -9,7 +9,6 @@ const io=require('socket.io')(server,{ cors: {origin:'*'}
 
 io.on('connection', (socket)=>{
 
-
     //Cada vez que se conecta un nuevo usuario, les llega esta información de que se ha conectado un nuevo user
     socket.broadcast.emit('chat_message', {
         usuario: 'INFO',
@@ -39,5 +38,6 @@ io.on('connection', (socket)=>{
 
 })
 
-
-server.listen(4000)
+const PORT = 4000
+server.listen(PORT)
+console.log("Escuchando en el puerto:",PORT)
